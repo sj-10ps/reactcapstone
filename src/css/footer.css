@@ -1,0 +1,22 @@
+footer{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    gap:20px;
+    background-color: gray;
+    
+}
+
+.navigation{
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
