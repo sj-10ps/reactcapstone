@@ -20,3 +20,19 @@ test('render date input',()=>{
     const date=screen.getByLabelText(/Choose date/i)
     expect(date).toBeInTheDocument()
 })
+
+const mockDispatch = jest.fn();
+
+test('date input has required attribute', () => {
+  render(<BrowserRouter><Booking avaialbletimes={[]} dispatch={mockDispatch} /></BrowserRouter>);
+  const dateInput = screen.getByLabelText(/Choose date/i);
+  expect(dateInput).toBeRequired();
+});
+
+test('guest input has min and max attributes', () => {
+  render(<BrowserRouter><Booking avaialbletimes={[]} dispatch={mockDispatch} /></BrowserRouter>);
+  const guestInput = screen.getByLabelText(/Number of guests/i);
+  expect(guestInput).toHaveAttribute('min', '1');
+  expect(guestInput).toHaveAttribute('max', '10');
+});
+
