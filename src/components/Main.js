@@ -5,6 +5,9 @@ import Chef from '../assets/restauranfood.jpg'
 import greek from '../assets/greek salad.jpg'
 import bruschetta from '../assets/bruchetta.svg'
 import lemon from '../assets/lemon dessert.jpg'
+import { Link } from 'react-router-dom'
+import Testimonials from './Testimonials'
+import About from './About'
 
 
 
@@ -64,19 +67,19 @@ import lemon from '../assets/lemon dessert.jpg'
 const Main = () => {
   return (
     <main>
-      <section className='intro'>
+      <section className='intro' >
         <section className='details'>
        <h1>Little Lemon</h1>
        <h3>Chicago</h3>
        <p>We are a restaurant</p>
-       <Button value={"Reserve a table"}/>
+      <Link to="/booking"> <Button value={"Reserve a table"}/></Link>
        </section>
        <section className='image'>
-        <img src={Chef}></img>
+        <img src={Chef} style={{height:300,maxWidth:250}}></img>
        </section>
       </section>
 
-      <section className='Menu'>
+      <section className='Menu' id='menu'>
         <section className='menuheader'>
          <h1>This Weeks Specials!</h1>
          <Button value={"Online menu"}/>
@@ -109,6 +112,8 @@ const Main = () => {
    
 
       </section>
+      <Testimonials/>
+      <About/>
     </main>
   )
 }

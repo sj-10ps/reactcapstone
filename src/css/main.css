@@ -12,9 +12,12 @@ main{
     flex-direction: row;
     padding: 20px;
     background-color: #495E57;
-    justify-content: center;
-    gap:200px;
+    justify-content: space-evenly;
+    gap:20px;
     padding-right: 300px;
+    
+    
+   
 
 }
 
@@ -32,20 +35,27 @@ main{
 .image{
     
     position: relative;
-   
-   
+
 }
 
-.image img{
-    position: absolute;
-    height: 300px;
-    width: 300px;
-    border-radius: 8px;
-    top: 30px;
 
-   
-    
+
+
+.image img {
+  position: absolute; 
+  height: 300px;
+  width: 300px;
+  top:50px;
+  border-radius: 8px;
+ 
 }
+
+/* @media (max-width:768px) {
+    .image img{
+        position: static;
+        top:0
+    }
+} */
 
 
 .Menu{

@@ -2,8 +2,10 @@ import React, { Children, cloneElement } from 'react'
 import Logo from '../assets/Logo.svg'
 import '../css/footer.css'
 
+import Logo2 from "../assets/Screenshot 2025-06-22 013344.png"
 
-const LinksGroup=({children,onClick})=>{
+
+export const LinksGroup=({children,onClick})=>{
     return(
       Children.map(children,(child)=>(
         cloneElement(child,{
@@ -27,20 +29,27 @@ const LinksGroup=({children,onClick})=>{
 
 const Footer = () => {
   return (
-    <footer>
-        <img src={Logo} style={{height:100}}></img>
+    <footer id='footer'>
+        <img src={Logo2} style={{height:100,backfaceVisibility:'hidden'}}></img>
         <div className='navigation'>
-         <p style={{color:'black'}}>Document Navigation</p>
+         <span style={{color:'black',fontWeight:"bold"}}>Document Navigation</span>
             <LinksGroup>
 
            <a href='#home' >Home </a>
             <a href='#about' >About </a>
              <a href='#menu' >Menu </a>
+              <a href='#testimonials' >Testimonials </a>
          </LinksGroup>
 
         </div>
-        <div className='contact'>
+        <div className='navigation'>
+           <span style={{color:'black',fontWeight:"bold"}}>Social media</span>
+            
 
+           <a href='https://instagram.com' >Instagram </a>
+            <a href='https://facebook.com' >Facebook </a>
+             <a href='https://youtube.com' >Youtube </a>
+  
         </div>
 
         <div className='social'>

@@ -1,19 +1,27 @@
-import React from 'react'
-import '../css/navbar.css'
+import React from 'react';
+import '../css/navbar.css';
+import { LinksGroup } from './Footer';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+const location=useLocation()
   return (
     <nav>
-      <ul>
-        <li><a href=''>Home</a></li>
-         <li><a href=''>About</a></li>
-         <li><a href=''>Menu</a></li>
-         <li><a href=''>Reservations</a></li>
-         <li><a href=''>Order online</a></li>
-         <li><a href=''>Login</a></li>
-      </ul>
-    </nav>
-  )
-}
+      <LinksGroup>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+         <a href="#testimonials">Testimonials</a>
+        <a href="#footer">Contacts</a>
+      </LinksGroup>
 
-export default Navbar
+      {location.pathname === "/" ? (
+        <Link to="/booking">Book Table</Link>
+      ) : (
+        <Link to="/">Back to Home</Link>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
